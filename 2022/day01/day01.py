@@ -1,4 +1,6 @@
-with open('day01.txt') as f:
+import os
+
+with open(os.path.join(os.path.dirname(__file__), 'day01.txt'), 'r') as f:
     data = f.read().splitlines()
 
 elf_list = []

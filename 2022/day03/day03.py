@@ -1,6 +1,7 @@
 import string
+import os
 
-with open('day03.txt') as f:
+with open(os.path.join(os.path.dirname(__file__), 'day03.txt'), 'r') as f:
     data = f.read().splitlines()
 
 arr = [False] * 52
