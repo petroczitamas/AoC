@@ -28,7 +28,7 @@ badge_total = 0
 for i in range(0, len(data), 3):
     j = i + 1
     k = i + 2
-    
+
     first = set(data[i])
     second = set(data[j])
     third = set(data[k])

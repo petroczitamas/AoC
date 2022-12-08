@@ -31,4 +31,3 @@ print(sum(elf_list[-3:]))
 #          count = 0
 
 # print(max)
-
