@@ -1,10 +1,10 @@
-import string
 import os
+import string
 
-with open(os.path.join(os.path.dirname(__file__), 'day03.txt'), 'r') as f:
+with open(os.path.join(os.path.dirname(__file__), "day03.txt"), "r") as f:
     data = f.read().splitlines()
 
-arr = [False] * 52
+letters_found = [False] * 52
 
 priorities = dict(zip(list(string.ascii_letters), range(52)))
 
@@ -12,14 +12,14 @@ duplicate_total = 0
 
 for i in data:
     half = len(i) // 2
-    first, second = set(i[half:]), set(i[:half])
+    first, second = set(i[:half]), set(i[half:])
     for j in first:
-        arr[priorities[j]] = True
+        letters_found[priorities[j]] = True
     for k in second:
-        if arr[priorities[k]] == True:
-            duplicate_total += (priorities[k] + 1)
+        if letters_found[priorities[k]]:
+            duplicate_total += priorities[k] + 1
             break
-    arr = [False] * 52
+    letters_found = [False] * 52
 
 print(duplicate_total)
 
@@ -34,6 +34,6 @@ for i in range(0, len(data), 3):
     third = set(data[k])
     intersect = set.pop(set.intersection(first, second, third))
 
-    badge_total += (priorities[intersect] + 1)
+    badge_total += priorities[str(intersect)] + 1
 
 print(badge_total)
