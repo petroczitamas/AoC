@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), "day01.txt"), "r") as f:
 corrected_data: list[str] = []
 
 # Correct the input data by iterating over list values and replacing number-words with a string that includes the number.
-# The replacement strings are constructed to preserve integrity of following words ("oneight", "twone", "threeight", "fiveight", "sevenine", "nineight")
+# The replacement strings are constructed to preserve integrity of following words ("oneight", "twone", "threeight", "fiveight", "sevenine", "eightwo", "eighthree", "nineight")
 for i in data:
     corrected_data.append(i.replace('one', 'one1one').replace('two', 'two2two').replace('three', 'three3three').replace('four', 'four4four').replace('five', 'five5five').replace('six', 'six6six').replace('seven', 'seven7seven').replace('eight', 'eight8eight').replace('nine', 'nine9nine'))
 
