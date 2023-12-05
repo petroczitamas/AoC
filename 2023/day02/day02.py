@@ -23,19 +23,22 @@ for i, game in enumerate(games):
         'green' : 0,
         'blue'  : 0
     }
+
     for j, draw in enumerate(game):
         if all([cubes_in_bag[key] >= draw[key] for key in draw.keys()]):
             good_draws['count'] += 1
-            for key in draw.keys():
-                if good_draws[key] < draw[key]:
-                    good_draws[key] = draw[key]
+        for key in draw.keys():
+            if good_draws[key] < draw[key]:
+                good_draws[key] = draw[key]
+    
     if good_draws['count'] == len(game):
         possible_games += (i + 1)
-        power_games += (good_draws['red'] * good_draws['green'] * good_draws['blue'])
+    
+    power_games += (good_draws['red'] * good_draws['green'] * good_draws['blue'])
 
 print(possible_games)
 
 print(power_games)
 
 # Part 1 result: 2416
-# Part 2 result: 11131 ?
+# Part 2 result: 63307
